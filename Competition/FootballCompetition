@@ -1,0 +1,15 @@
+
+public class FootballCompetition implements Competition {
+	private String fastestGoal;
+	private static Participant[] schedule;
+	
+	public Participant[] getSchedule() {
+		// TODO Auto-generated method stub
+		return schedule;
+	}
+	
+	public void setSchedule(Participant[] schedule){
+		this.schedule = schedule;
+	}
+
+}
