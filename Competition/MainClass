@@ -1,0 +1,15 @@
+import java.util.Scanner;
+
+
+public class MainClass extends CreateEvent{
+	public static void main(String args) throws EventException, EmptySetException{
+		Scanner scan = new Scanner(System.in);
+		String text = scan.nextLine();
+		Participant[] schedule = null;
+
+		Competition cmp = getEvent(text);
+		fillSchedule(cmp,schedule);
+		bets(cmp, 2, 12);
+		
+	}
+}
