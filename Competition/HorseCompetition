@@ -1,0 +1,15 @@
+
+public class HorseCompetition implements Competition {
+	private static Participant[] schedule;
+	private String breed;
+	
+	public Participant[] getSchedule() {
+		// TODO Auto-generated method stub
+		return schedule;
+	}
+	
+	public void setSchedule(Participant[] schedule){
+		this.schedule = schedule;
+	}
+
+}
