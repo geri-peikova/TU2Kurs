@@ -1,0 +1,13 @@
+
+public class Formula1Competition implements Competition{
+	private static Participant[] schedule;
+	private String winnersTime;
+	
+	public Participant[] getSchedule(){
+		return schedule;
+	}
+	
+	public void setSchedule(Participant[] schedule){
+		this.schedule = schedule;
+	}
+}
