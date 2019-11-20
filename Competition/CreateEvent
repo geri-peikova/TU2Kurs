@@ -1,0 +1,37 @@
+
+public class CreateEvent {
+	private static String typeOfEvent;
+	
+	public static Competition getEvent(String event)throws EventException{
+		if(event.equals("HorseCompetition")){
+			typeOfEvent = event;
+			Competition cmp = new HorseCompetition();
+			return cmp;
+		}else if(event.equals("FootballCompetition")){
+			typeOfEvent = event;
+			Competition cmp = new FootballCompetition();
+			return cmp;
+		}else if(event.equals("Formula1Competition")){
+			typeOfEvent = event;
+			Competition cmp = new Formula1Competition();
+			return cmp;
+		}else throw new EventException("No such Exception");
+	}
+	
+	public static void fillSchedule(Competition ob, Participant[] schedule)throws EmptySetException{
+		if(typeOfEvent.equals("HorseCompetition")){
+			HorseCompetition horse = (HorseCompetition)ob;
+			horse.setSchedule(schedule);
+		}else if(typeOfEvent.equals("FootballCompetition")){
+			FootballCompetition football = (FootballCompetition)ob;
+			football.setSchedule(schedule);
+		}else if(typeOfEvent.equals("Formula1Competition")){
+			Formula1Competition car = (Formula1Competition)ob;
+			car.setSchedule(schedule);
+		}else throw new EmptySetException("Empty schedule");
+	}
+	
+	public static void bets(Competition ob, int id, double bet){
+		
+	}
+}
