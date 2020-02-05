@@ -1,0 +1,22 @@
+import java.io.IOException;
+import java.net.ServerSocket;
+import java.net.Socket;
+
+
+public class Server {
+	public static void main(String[] args){
+		try{
+			ServerSocket ss = new ServerSocket(8080);
+			while(true){
+				Socket s = ss.accept();
+				Client client = new Client(s);
+				client.start();	
+			}
+		}catch(IOException e){
+			e.printStackTrace();
+		}
+	}
+	
+	
+	
+}
