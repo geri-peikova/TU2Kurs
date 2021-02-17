@@ -1,0 +1,38 @@
+#ifndef BOOK_H
+#define BOOK_H
+
+#include <iostream>
+#include <fstream>
+#include <cstring>
+#include <algorithm>
+#include <ctime>
+#include <vector>
+#include "library.h"
+
+class Book : public Library
+{
+    std::vector<std::vector<std::string>> authors;
+    std::vector<bool> available;
+    std::vector<time_t> rentedOn;
+
+public:
+    Book();
+    void addBook(const char* title,
+                 const std::vector<std::string> authors,
+                 bool available,
+                 time_t date);
+    std::vector<bool> getAvailable() const;
+    void setAvailable(const std::vector<bool> &value);
+    std::vector<time_t> getRentedOn() const;
+    void setRentedOn(const std::vector<time_t> &value);
+    std::vector<std::vector<std::string> > getAuthors() const;
+    void setAuthors(const std::vector<std::vector<std::string> > &value);
+    static bool nameCompare(const std::vector<std::string>& a,
+                            const std::vector<std::string>& b);
+    void onDate(struct tm* chosenDate);
+    void moreThanOneAuthor();
+};
+
+std::ostream& operator<<(std::ostream& os, const Book& b);
+
+#endif // BOOK_H
